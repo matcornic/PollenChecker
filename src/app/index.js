@@ -6,7 +6,7 @@
         'pchk-layout',
         'pchk-error',
         'pchk-home',
-        'pchk-requests'
+        'pchk-locations'
     ]).config(function ($urlRouterProvider, RestangularProvider) {
         $urlRouterProvider.otherwise('/404');
         RestangularProvider.setBaseUrl('https://pollencheck.p.mashape.com/api/1/');
