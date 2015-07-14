@@ -8,6 +8,7 @@
         'pchk-home',
         'pchk-locations'
     ]).config(function ($urlRouterProvider, RestangularProvider) {
+        $urlRouterProvider.when('', '/');
         $urlRouterProvider.otherwise('/404');
         RestangularProvider.setBaseUrl('https://pollencheck.p.mashape.com/api/1/');
         RestangularProvider.setDefaultHeaders({'X-Mashape-Key':'W77yjYEEhamshelfriMgjY3fwPSRp1LdNuAjsnSIMy4kcmQ0G3'});
