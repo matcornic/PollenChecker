@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-    angular.module('pchk-home', ['pchk-core']).config(function ($stateProvider) {
+    angular.module('pchk-home', ['pchk-core', 'pchk-directives']).config(function ($stateProvider) {
         $stateProvider.state('main.home', {
             url: '/',
             data: {
