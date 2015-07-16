@@ -24,11 +24,17 @@
 
       vm.getRightUrl = function(photos){
         var res = '';
-        for (var i = 0; i < photos.length; i++) {
+        var initialI = Math.round(Math.random() * photos.length);
+        var avoidInfiniteLoop = 0;
+        for (var i = initialI; i < photos.length; Math.round(Math.random() * photos.length)) {
+            if(avoidInfiniteLoop > 30)
+              break;
+
             if(photos[i].url_o){
               res = photos[i].url_o;
               break;
             }
+            avoidInfiniteLoop++;
         }
         return res;
       };
