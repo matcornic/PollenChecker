@@ -1,11 +1,35 @@
 <div class="container">
-  <h1 class="city">{{locations.city}}</h1>
   <h1>{{locations.city}}</h1>
-  <ul>
-    <li>Ragweed : {{locations.pollens[0].ragweed.maxLevel}}</li>
-    <li>Birch : {{locations.pollens[0].birch.maxLevel}}</li>
-    <li>grass : {{locations.pollens[0].grass.maxLevel}}</li>
-    <li>olive : {{locations.pollens[0].olive.maxLevel}}</li>
-    </ul>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <a href="#" class="thumbnail">
+        <img src="assets/images/ragweed.jpg" alt="Ragweed" class="img-circle">
+      </a>
+      {{locations.pollens[0].ragweed.maxLevel}}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <div class="thumbnail">
+        <a href="#">
+          <img src="assets/images/birch.jpg" alt="Birch" class="img-circle">
+        </a>
+        <span class="title">{{locations.pollens[0].birch.maxLevel}}</span>
+
+        <h2>Birch</h2>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <a href="#" class="thumbnail">
+        <img src="assets/images/grass.jpg" alt="Grass" class="img-circle">
+      </a>
+      {{locations.pollens[0].grass.maxLevel}}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <a href="#" class="thumbnail">
+        <img src="assets/images/olive.jpg" alt="Olive" class="img-circle">
+      </a>
+      {{locations.pollens[0].olive.maxLevel}}
+    </div>
+  </div>
   <a href="{{locations.photo.url}}">Source de l'image</a>
 </div>

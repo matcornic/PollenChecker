@@ -3,8 +3,9 @@
 // bower:less
 // endbower
 
-@icon-font-path: '../../bower_components/bootstrap/fonts/';
+@icon-font-path: '../../../bower_components/bootstrap/fonts/';
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
+@import '../../bower_components/bootstrap/less/thumbnails.less';
 
 /*
 	Eventually by HTML5 UP
@@ -23,7 +24,7 @@
 		vertical-align: baseline;
 	}
 
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	article, aside, details, figcaption, figure, footer, header, menu, nav, section {
 		display: block;
 	}
 
@@ -95,9 +96,7 @@
 		}
 
 	body {
-		display: -moz-flex;
 		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
@@ -110,6 +109,16 @@
 		background-color: #000;
 		padding: 6em 4em 4em 4em;
 	}
+
+	.bg body {
+	  background-color: #000;
+	  overflow : hidden;
+	}
+
+  .bg body {
+    background-color: #000;
+    overflow : hidden;
+  }
 
 		body > * {
 			position: relative;
@@ -467,5 +476,3 @@
 		hr.major {
 			margin: 3em 0;
 		}
-
-
