@@ -4,17 +4,7 @@
   angular.module('pchk-locations').controller('LocationsCtrl', function ($stateParams, LocationsService) {
     var vm = this;
 
-    //
-    vm.updateBackground = function (url) {
-      var scope = angular.element($("#homeCont")).scope();
-      _.defer(function () {
-        scope.$apply(function () {
-          scope.bg = url;
-        });
-      });
-    };
-
-    vm.updateBackground('assets/images/bg02.jpg');
+    updateBackground('assets/images/bg02.jpg')
 
     LocationsService.getForecastFromLocation($stateParams.woeid).then(function (result) {
       vm.pollens = result.periods;
@@ -28,10 +18,12 @@
       .success(function (data) {
         if (data) {
           var resPhoto = vm.getRightUrl(data.photos.photo);
-          vm.updateBackground(resPhoto.url_o);
-          vm.photo = {
-            'url': 'https://www.flickr.com/photos/' + resPhoto.owner + '/' + resPhoto.id
-          };
+          if (resPhoto) {
+            updateBackground(resPhoto.url_o);
+            vm.photo = {
+              'url': 'https://www.flickr.com/photos/' + resPhoto.owner + '/' + resPhoto.id
+            };
+          }
         }
       }).
       error(function () {
@@ -50,7 +42,7 @@
         if (avoidInfiniteLoop > photos.length)
           break;
 
-        if (photos[i].url_o) {
+        if (photos[i].url_o && photos[i].width_o > photos[i].height_o) {
           res = photos[i];
           console.log(res);
           break;
