@@ -52,5 +52,31 @@
       return res;
     };
 
+    vm.classFromLevel = function(level){
+
+      var className = "";
+      switch(level) {
+        case 'very_low':
+          className = "levelVeryLow";
+          break;
+        case "low":
+          className = "levelLow";
+          break;
+        case "medium":
+          className = "levelMedium";
+          break;
+        case "high":
+          className = "levelHigh";
+          break;
+        case "very_high":
+          className = "levelVeryHigh";
+          break;
+        default:
+          className = "levelDefault"
+      }
+      console.log(level + '->' +className);
+      return className;
+    };
+
   });
 })();

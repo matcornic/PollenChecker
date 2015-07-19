@@ -1,34 +1,39 @@
 <div class="container">
   <h1>{{locations.city}}</h1>
+  <div class="row" ng-show="locations.pollens">
+    <div class="col-xs-12 col-sm-6 col-md-3 pollenLevel">
+      <a href="#" class="thumbnail">
+        <img src="assets/images/ragweed.jpg" alt="Ragweed"
+             class="img-circle {{locations.classFromLevel(locations.pollens[0].ragweed.maxLevel)}}">
+      </a>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <a href="#" class="thumbnail">
-        <img src="assets/images/ragweed.jpg" alt="Ragweed" class="img-circle">
-      </a>
-      {{locations.pollens[0].ragweed.maxLevel}}
+      <h3>Ragweed</h3>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <div class="thumbnail">
-        <a href="#">
-          <img src="assets/images/birch.jpg" alt="Birch" class="img-circle">
-        </a>
-        <span class="title">{{locations.pollens[0].birch.maxLevel}}</span>
+    <div class="col-xs-12 col-sm-6 col-md-3 pollenLevel">
 
-        <h2>Birch</h2>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <a href="#" class="thumbnail">
-        <img src="assets/images/grass.jpg" alt="Grass" class="img-circle">
+        <img src="assets/images/birch.jpg" alt="Birch"
+             class="img-circle {{locations.classFromLevel(locations.pollens[0].birch.maxLevel)}}">
       </a>
-      {{locations.pollens[0].grass.maxLevel}}
+
+      <h3>Birch</h3>
+
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-3 pollenLevel">
       <a href="#" class="thumbnail">
-        <img src="assets/images/olive.jpg" alt="Olive" class="img-circle">
+        <img src="assets/images/grass.jpg" alt="Grass"
+             class="img-circle {{locations.classFromLevel(locations.pollens[0].grass.maxLevel)}}">
       </a>
-      {{locations.pollens[0].olive.maxLevel}}
+
+      <h3>Grass</h3>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 pollenLevel" >
+      <a href="#" class="thumbnail">
+        <img src="assets/images/olive.jpg" alt="Olive"
+             class="img-circle {{locations.classFromLevel(locations.pollens[0].olive.maxLevel)}}">
+      </a>
+
+      <h3>Olive</h3>
     </div>
   </div>
   <a ng-show="locations.photo.url" href="{{locations.photo.url}}">Source de l'image</a>
