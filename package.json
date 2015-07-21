@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "dependencies": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "node app",
+    "postinstall": "gulp default"
   },
   "devDependencies": {
     "gulp": "~3.8.10",
