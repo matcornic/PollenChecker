@@ -16,8 +16,16 @@
               $state.go("main.locations", {woeid: cityFromAPI.woeid});
             }
           }
-        }).error(function (erreur) {
-          console.log(erreur);
+        });
+      }
+    };
+    vm.keyUp = function(){
+
+      if (vm.city && vm.city.length >= 3) {
+        PlacesService.getCitiesInfo(vm.city).success(function (data) {
+          if (data) {
+            vm.cities = data.places.place;
+          }
         });
       }
     };

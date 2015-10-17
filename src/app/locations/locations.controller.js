@@ -10,7 +10,6 @@
       vm.pollens = result.periods;
       vm.city = result.location.name;
       vm.woeid = result.woeid;
-      console.log(vm.pollens);
 
     });
 
@@ -74,7 +73,6 @@
         default:
           className = "levelDefault"
       }
-      console.log(level + '->' +className);
       return className;
     };
 
