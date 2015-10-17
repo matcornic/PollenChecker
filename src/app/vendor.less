@@ -5,6 +5,9 @@
 
 @icon-font-path: '../../../bower_components/bootstrap/fonts/';
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Cookie);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
 @import '../../bower_components/bootstrap/less/thumbnails.less';
 
 /*
@@ -175,7 +178,7 @@
     width: 100%;
     height: auto;
 		left: 0;
-		opacity: 0.25;
+		opacity: 0.4;
 		position: fixed;
 		top: 0;
 		z-index: -1;
@@ -313,15 +316,15 @@
 		-ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		border-bottom: dotted 1px rgba(255, 255, 255, 0.25);
-		color: #1cb495;
+		color: #d15255;
 		text-decoration: none;
 	}
 
-		a:hover {
-			border-bottom-color: transparent;
-			color: #1cb495 !important;
-			text-decoration: none;
-		}
+  a:hover {
+    border-bottom-color: transparent;
+    color: lightgrey !important;
+    text-decoration: none;
+  }
 
 	strong, b {
 		color: #fff;
@@ -430,3 +433,48 @@
 		hr.major {
 			margin: 3em 0;
 		}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: #ce013d;
+}
+
+.form-control::-webkit-input-placeholder { color: #FAB5B8; }
+.form-control:-moz-placeholder { color: #FAB5B8; }
+.form-control::-moz-placeholder { color: #FAB5B8; }
+.form-control:-ms-input-placeholder { color: #FAB5B8; }
+
+
+.fadein,
+ .fadeout {
+   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+   -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+   -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+ }
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  display: block !important;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  display: block !important;
+}

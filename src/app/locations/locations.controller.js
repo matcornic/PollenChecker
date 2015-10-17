@@ -4,7 +4,7 @@
   angular.module('pchk-locations').controller('LocationsCtrl', function ($stateParams, LocationsService) {
     var vm = this;
 
-    updateBackground('assets/images/bg02.jpg')
+    updateBackground('assets/images/bg.jpg')
 
     LocationsService.getForecastFromLocation($stateParams.woeid).then(function (result) {
       vm.pollens = result.periods;
