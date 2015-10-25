@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-    angular.module('pchk-locations').factory('LocationsService', function (Restangular, $http) {
+    angular.module('pchk-locations').factory('LocationsService', function (Restangular, $http, forecastAppId) {
       return {
            getForecastFromLocation : function(woeid){
               return Restangular.one('forecasts',woeid).get();
@@ -12,7 +12,7 @@
                     url: 'https://api.flickr.com/services/rest/',
                     params: {
                       method : 'flickr.photos.search',
-                      api_key : 'b1e323d889060512b7690c8c24cc1de6',
+                      api_key : forecastAppId,
                       tags : ['street', 'architecture', 'building', 'skyscraper', 'urban'].join(','),
                       tags_mode : 'any',
                       sort : 'interestingness-desc',
