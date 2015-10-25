@@ -7,6 +7,8 @@
     vm.cities = [];
     vm.loaded = true;
     vm.goloaded = true;
+
+    // When clicking on the Go button
     vm.validForm = function () {
       vm.goloaded = false;
       if (vm.city && vm.city.length >= 3) {
@@ -21,8 +23,9 @@
         });
       }
     };
-    vm.keyUp = function(){
 
+    // When typing any key in the input
+    vm.keyUp = function(){
       if (vm.city && vm.city.length >= 3) {
         vm.loaded = false;
         PlacesService.getCitiesInfo(vm.city).success(function (data) {
@@ -33,7 +36,11 @@
         });
       }
     };
-    updateBackground('assets/images/bg.jpg');
+
+    vm.filterEuropeanCountries = function(countries){
+
+    };
+
   });
 })();
 

@@ -3,16 +3,21 @@
 (function () {
   angular.module('pchk-locations').controller('LocationsCtrl', function ($stateParams, LocationsService) {
     var vm = this;
+    vm.loaded = false;
     updateBackground('assets/images/bg.jpg')
 
+    // Get pollens forecast from current (identified by woeid)
     LocationsService.getForecastFromLocation($stateParams.woeid).then(function (result) {
+      vm.loaded = true;
       vm.pollens = result.periods;
       vm.city = result.location.name;
       vm.woeid = result.woeid;
     }, function (error){
+      vm.loaded = true;
       console.log("Can't reach the forecast API or ressources does not exist:" +error.status);
     });
 
+    // Get photo from current location (identified by woeid)
     LocationsService.getPhotoFromLocation($stateParams.woeid)
       .success(function (data) {
         if (data) {
@@ -32,7 +37,7 @@
         };
       });
 
-
+    // Build the url of the Flickr image
     vm.getRightUrl = function (photos) {
       var res = '';
       var initialI = Math.round(Math.random() * photos.length);
@@ -51,6 +56,7 @@
       return res;
     };
 
+    // Get the classname from the forecast level
     vm.classFromLevel = function(level){
 
       var className = "";
