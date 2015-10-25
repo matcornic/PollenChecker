@@ -3,14 +3,14 @@
 (function () {
   angular.module('pchk-locations').controller('LocationsCtrl', function ($stateParams, LocationsService) {
     var vm = this;
-
     updateBackground('assets/images/bg.jpg')
 
     LocationsService.getForecastFromLocation($stateParams.woeid).then(function (result) {
       vm.pollens = result.periods;
       vm.city = result.location.name;
       vm.woeid = result.woeid;
-
+    }, function (error){
+      console.log("Can't reach the forecast API or ressources does not exist:" +error.status);
     });
 
     LocationsService.getPhotoFromLocation($stateParams.woeid)
