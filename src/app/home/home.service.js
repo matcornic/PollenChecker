@@ -3,7 +3,7 @@
 (function () {
   angular.module('pchk-home').factory('PlacesService', function (Restangular, $http, $q) {
     return {
-      // Get the first 7 cities, from a pattern
+      // Get the first 5 cities, from a pattern
       getCitiesInfo : function(cityPattern){
         return $http({
           method: 'GET',
