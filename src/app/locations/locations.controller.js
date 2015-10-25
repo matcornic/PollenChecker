@@ -12,15 +12,18 @@
       vm.pollens = result.periods;
       vm.city = result.location.name;
       vm.woeid = result.woeid;
+      console.log("test");
     }, function (error){
       vm.loaded = true;
-      console.log("Can't reach the forecast API or ressources does not exist:" +error.status);
+      vm.error = {message : "Sorry, this location does not provide pollen forecast yet"};
+      console.log("Can't reach the forecast API or ressources does not exist:");
+      console.log(error);
     });
 
     // Get photo from current location (identified by woeid)
     LocationsService.getPhotoFromLocation($stateParams.woeid)
       .success(function (data) {
-        if (data) {
+        if (data && data.photos && data.photos.photo) {
           var resPhoto = vm.getRightUrl(data.photos.photo);
           if (resPhoto) {
             updateBackground(resPhoto.url_o);
