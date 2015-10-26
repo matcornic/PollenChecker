@@ -9,7 +9,7 @@
           method: 'GET',
           url: "http://where.yahooapis.com/v1/places$and(.q('"+cityPattern+"'),.type(7));start=0;count=5",
           params: {
-              appid : whereAppId,
+            appid : whereAppId,
             format : 'json'
           }
         });

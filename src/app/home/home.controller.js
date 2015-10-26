@@ -14,6 +14,7 @@
       vm.goloaded = false;
       if (vm.city && vm.city.length >= 3) {
         PlacesService.getCityInfo(vm.city).success(function (data) {
+          vm.error = null;
           if (data) {
             var cityFromAPI = data.places.place[0];
             if (cityFromAPI && cityFromAPI.woeid) {
@@ -21,6 +22,10 @@
             }
           }
         }).error(function(error){
+          vm.goloaded = true;
+          vm.error = {code : error ? error.status:"", message : "Sorry, we can't reach your location right now. Come back later."};
+          console.log("Can't reach the Yahoo Geoplanet API or the limit is reached.");
+          console.log(error);
         });
       }
     };
@@ -30,10 +35,16 @@
       if (vm.city && vm.city.length >= 3) {
         vm.loaded = false;
         PlacesService.getCitiesInfo(vm.city).success(function (data) {
+          vm.error = null;
           if (data) {
             vm.cities = vm.filterEuropeanCountries(data.places.place);
             vm.loaded = true;
           }
+        }).error(function(error){
+          vm.loaded = true;
+          vm.error = {code : error ? error.status:"", message : "Sorry, we can't reach your location right now. Come back later."};
+          console.log("Can't reach the Yahoo Geoplanet API or the limit is reached.");
+          console.log(error);
         });
       }
     };

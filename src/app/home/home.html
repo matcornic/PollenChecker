@@ -6,6 +6,9 @@
           <button class="btn btn-danger" type="submit"><i  ng-show="!home.goloaded" class="fa fa-spinner fa-spin fa-1x"></i>Go!</button>
         </span>
     </div>
+    <div class="error-message" ng-show="home.error.message">
+      <span class="fa fa-frown-o"/> {{home.error.message}}
+    </div>
     <div ng-show="!home.loaded" ><i  class="fa fa-spinner fa-spin fa-1x"></i></div>
     <ul ng-repeat="place in home.cities">
       <li><a ui-sref="main.locations({woeid: place.woeid})">{{place.name}} ({{place.admin1?place.admin1+", ":""}}{{place.country}})</a></li>
