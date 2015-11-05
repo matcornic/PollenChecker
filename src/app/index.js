@@ -7,11 +7,12 @@
         'pchk-error',
         'pchk-home',
         'pchk-locations'
-    ]).config(function ($urlRouterProvider, RestangularProvider) {
+    ]).config(function ($urlRouterProvider, RestangularProvider, forecastAppId) {
         $urlRouterProvider.when('', '/');
         $urlRouterProvider.otherwise('/404');
         RestangularProvider.setBaseUrl('https://pollencheck.p.mashape.com/api/1/');
-        RestangularProvider.setDefaultHeaders({'X-Mashape-Key':'bOjN5CeQm1mshRWRxL9A7LpJcGnVp1i3YJKjsnXjhLKw9XJ5MP'});
+        RestangularProvider.setDefaultHeaders({'X-Mashape-Key':forecastAppId});
     });
+
 })();
 

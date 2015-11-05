@@ -3,6 +3,7 @@
 (function () {
   angular.module('pchk-home').controller('HomeCtrl', function (Restangular, PlacesService, $state, europeanCountries) {
 
+
     updateBackground('assets/images/bg.jpg');
     var vm = this;
     vm.cities = [];
