@@ -1,9 +1,14 @@
-<div class="loading" ng-show="!locations.loaded" ><i  class="fa fa-spinner fa-spin fa-5x"></i></div>
+<div class="loading" ng-show="!locations.loaded" >
+  <i  class="fa fa-spinner fa-spin fa-5x"></i>
+</div>
 <div class="container">
   <h1>{{locations.city}}</h1>
   <div class="error-message" ng-show="locations.error.message">
-    <div class="fa fa-frown-o fa-5x"/>
-    <div><p>{{locations.error.message}}. </p><p><a ui-sref="main.home">Search another location</a></p></div>
+    <div><span class="fa fa-frown-o fa-5x"/></div>
+    <div>
+      <p>{{locations.error.message}}. </p>
+      <p><a ui-sref="main.home">Search another location</a></p>
+    </div>
   </div>
   <div class="row fadein fadeout" ng-show="locations.pollens">
     <div class="col-xs-6 col-sm-6 col-md-3 pollenLevel">

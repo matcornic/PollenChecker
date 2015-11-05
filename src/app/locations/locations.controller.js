@@ -4,7 +4,7 @@
   angular.module('pchk-locations').controller('LocationsCtrl', function ($stateParams, LocationsService) {
     var vm = this;
     vm.loaded = false;
-    updateBackground('assets/images/bg.jpg')
+    updateBackground('assets/images/bg.jpg');
 
     // Get pollens forecast from current (identified by woeid)
     LocationsService.getForecastFromLocation($stateParams.woeid).then(function (result) {
@@ -12,11 +12,10 @@
       vm.pollens = result.periods;
       vm.city = result.location.name;
       vm.woeid = result.woeid;
-      console.log("test");
     }, function (error){
       vm.loaded = true;
-      vm.error = {message : "Sorry, this location does not provide pollen forecast yet"};
-      console.log("Can't reach the forecast API or ressources does not exist:");
+      vm.error = {message : 'Sorry, this location does not provide pollen forecast yet'};
+      console.log('Can\'t reach the forecast API or ressources does not exist:');
       console.log(error);
     });
 
@@ -46,12 +45,12 @@
       var initialI = Math.round(Math.random() * photos.length);
       var avoidInfiniteLoop = 0;
       for (var i = initialI; i < photos.length; Math.round(Math.random() * photos.length)) {
-        if (avoidInfiniteLoop > photos.length)
+        if (avoidInfiniteLoop > photos.length){
           break;
+        }
 
         if (photos[i].url_o && photos[i].width_o > photos[i].height_o) {
           res = photos[i];
-          console.log(res);
           break;
         }
         avoidInfiniteLoop++;
@@ -62,25 +61,25 @@
     // Get the classname from the forecast level
     vm.classFromLevel = function(level){
 
-      var className = "";
+      var className = '';
       switch(level) {
         case 'very_low':
-          className = "levelVeryLow";
+          className = 'levelVeryLow';
           break;
-        case "low":
-          className = "levelLow";
+        case 'low':
+          className = 'levelLow';
           break;
-        case "medium":
-          className = "levelMedium";
+        case 'medium':
+          className = 'levelMedium';
           break;
-        case "high":
-          className = "levelHigh";
+        case 'high':
+          className = 'levelHigh';
           break;
-        case "very_high":
-          className = "levelVeryHigh";
+        case 'very_high':
+          className = 'levelVeryHigh';
           break;
         default:
-          className = "levelDefault"
+          className = 'levelDefault';
       }
       return className;
     };

@@ -7,7 +7,7 @@
       getCitiesInfo : function(cityPattern){
         return $http({
           method: 'GET',
-          url: "http://where.yahooapis.com/v1/places$and(.q('"+cityPattern+"'),.type(7));start=0;count=5",
+          url: 'http://where.yahooapis.com/v1/places$and(.q(\''+cityPattern+'\'),.type(7));start=0;count=5',
           params: {
             appid : whereAppId,
             format : 'json'
@@ -18,7 +18,7 @@
       getCityInfo : function(cityPattern){
         return $http({
           method: 'GET',
-          url: "http://where.yahooapis.com/v1/places$and(.q('"+cityPattern+"'),.type(7))",
+          url: 'http://where.yahooapis.com/v1/places$and(.q(\''+cityPattern+'\'),.type(7))',
           params: {
             appid : whereAppId,
             format : 'json'
@@ -29,7 +29,7 @@
       getContinentFromWoeid : function(woeid){
         return $http({
           method: 'GET',
-          url: "http://where.yahooapis.com/v1/place/"+woeid+"/belongtos.type(29)",
+          url: 'http://where.yahooapis.com/v1/place/'+woeid+'/belongtos.type(29)',
           params: {
             appid : whereAppId,
             format : 'json'

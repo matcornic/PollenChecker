@@ -19,13 +19,13 @@
           if (data) {
             var cityFromAPI = data.places.place[0];
             if (cityFromAPI && cityFromAPI.woeid) {
-              $state.go("main.locations", {woeid: cityFromAPI.woeid});
+              $state.go('main.locations', {woeid: cityFromAPI.woeid});
             }
           }
         }).error(function(error){
           vm.goloaded = true;
-          vm.error = {code : error ? error.status:"", message : "Sorry, we can't reach your location right now. Come back later."};
-          console.log("Can't reach the Yahoo Geoplanet API or the limit is reached.");
+          vm.error = {code : error ? error.status:"", message : 'Sorry, we can\'t reach your location right now. Come back later.'};
+          console.log('Can\'t reach the Yahoo Geoplanet API or the limit is reached.');
           console.log(error);
         });
       }
@@ -43,8 +43,8 @@
           }
         }).error(function(error){
           vm.loaded = true;
-          vm.error = {code : error ? error.status:"", message : "Sorry, we can't reach your location right now. Come back later."};
-          console.log("Can't reach the Yahoo Geoplanet API or the limit is reached.");
+          vm.error = {code : error ? error.status:"", message : 'Sorry, we can\'t reach your location right now. Come back later.'};
+          console.log('Can\'t reach the Yahoo Geoplanet API or the limit is reached.');
           console.log(error);
         });
       }
@@ -59,7 +59,7 @@
         for (var i = 0; i < cities.length; i++) {
           var city = cities[i];
           // Keeps only city with woeid from static array.
-          if(europeanCountries.indexOf(city["country attrs"].woeid) > -1){
+          if(europeanCountries.indexOf(city['country attrs'].woeid) > -1){
             returnCities[cpt] = city;
             cpt++;
           }
