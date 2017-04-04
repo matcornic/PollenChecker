@@ -1,5 +1,5 @@
 # PollenChecker
 
-Demo : http://matcornic.com/PollenChecker
+DEPRECATED : API has been deleted
 
 Change keys of API from core.constant.js
